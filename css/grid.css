@@ -1,0 +1,80 @@
+.row { margin: 0 -10px;}
+.col { padding:10px; float:left; position: relative;}
+.pad0 { padding:0;}
+.pad10 { padding:10px;}
+.pad20 { padding:20px;}
+.pad20 { padding:20px;}
+
+@keyframes sk-stretchdelay {
+	0%, 40%, 100% { transform: scaleY(0.4);}
+	20% { transform: scaleY(1.0);}
+}
+/*
+.grid_content { display: grid; grid-gap: 0; grid-template-columns: auto auto; grid-template-rows: 60px auto; padding: 20px;
+
+grid-template-areas:
+'a b c'
+'d d d';
+}
+.grid { background-color: rgba(50,220,0,.5); padding: 10px;}
+.a { grid-area: a;}
+.b { grid-area: b;}
+.c { grid-area: c;}
+.d { grid-area: d;}
+.e { grid-area: e;}
+.f { grid-area: f;}
+.g { grid-area: g;}
+.h { grid-area: h;}
+*/
+
+.col-1 { width:8.3333%;}
+.col-2 { width:16.6666%;}
+.col-3 { width:24.9999%;}
+.col-4 { width:33.3332%;}
+.col-5 { width:41.6665%;}
+.col-6 { width:49.9998%;}
+.col-7 { width:58.3331%;}
+.col-8 { width:66.6664%;}
+.col-9 { width:74.9997%;}
+.col-10 { width:83.3330%;}
+.col-11 { width:91.6663%;}
+.col-12 { width:100%;}
+
+.prefix-1 { margin-left:8.3333%;}
+.prefix-2 { margin-left:16.6666%;}
+.prefix-3 { margin-left:24.9999%;}
+.prefix-4 { margin-left:33.3332%;}
+.prefix-5 { margin-left:41.6665%;}
+.prefix-6 { margin-left:49.9998%;}
+.prefix-7 { margin-left:58.3331%;}
+.prefix-8 { margin-left:66.6664%;}
+.prefix-9 { margin-left:74.9997%;}
+.prefix-10 { margin-left:83.3330%;}
+.prefix-11 { margin-left:91.6663%;}
+.prefix-12 { margin-left:100%;}
+
+.sufix-1 { margin-right:8.3333%;}
+.sufix-2 { margin-right:16.6666%;}
+.sufix-3 { margin-right:24.9999%;}
+.sufix-4 { margin-right:33.3332%;}
+.sufix-5 { margin-right:41.6665%;}
+.sufix-6 { margin-right:49.9998%;}
+.sufix-7 { margin-right:58.3331%;}
+.sufix-8 { margin-right:66.6664%;}
+.sufix-9 { margin-right:74.9997%;}
+.sufix-10 { margin-right:83.3330%;}
+.sufix-11 { margin-right:91.6663%;}
+.sufix-12 { margin-right:100%;}
+
+.margin-1 { margin-right:8.3333%; margin-left:8.3333%;}
+.margin-2 { margin-right:16.6666%; margin-left:16.6666%;}
+.margin-3 { margin-right:24.9999%; margin-left:24.9999%;}
+.margin-4 { margin-right:33.3332%; margin-left:33.3332%;}
+.margin-5 { margin-right:41.6665%; margin-left:41.6665%;}
+.margin-6 { margin-right:49.9998%; margin-left:49.9998%;}
+.margin-7 { margin-right:58.3331%; margin-left:58.3331%;}
+.margin-8 { margin-right:66.6664%; margin-left:66.6664%;}
+.margin-9 { margin-right:74.9997%; margin-left:74.9997%;}
+.margin-10 { margin-right:83.3330%; margin-left:83.3330%;}
+.margin-11 { margin-right:91.6663%; margin-left:91.6663%;}
+.margin-12 { margin-right:100%; margin-left:100%;}

@@ -1,20 +1,53 @@
-<script src="https://kit.fontawesome.com/91b58a9028.js"></script>
-
-<div class="custom-input">
-    <input type="text">
-    <div class="clip"><i class="fas fa-check"></i></div>
-    <svg width="0" height="0">
-        <clipPath id="clipPolygon">
-            <polygon points="200 250,400 100,300 50,0 0"></polygon>
-        </clipPath>
-    </svg>
+<div class="form">
+    <div class="lx-input">
+        <input type="text" id="full_name" class="">
+        <label for="full_name">Nome completo</label>
+        <div class="clip"><i class="fas fa-check"></i></div>
+    </div>
 </div>
-
 <style>
+body { background: #eef2f6; font-family: 'Manjari', sans-serif;}
 * { outline: none;}
-.custom-input { width: 300px; height: 60px; background: #0F0; position: relative; margin: 100px auto;}
-input { width: 100%; height: 100%; font-size: 18px; padding: 0 15px; border: none; box-shadow: rgba(21, 39, 71, .1) 0 2px 5px, rgba(21, 39, 71, .1) 0 2px 15px;}
-input + .clip { color: #FFF; text-align: right; font-size: 22px; padding: 18px; position:absolute; top: 0; left: 0; bottom: 0; right: 0; background: #80b4ca; clip-path: polygon(0 100%, 100% 100%, 100% 75%, 94% 88%, 80% 88%, 72% 88%, 59% 88%, 3% 88%, 0 79%); pointer-events: none; transition: cubic-bezier(.68,-0.02,.33,1.26) clip-path 600ms;}
-input:focus + .clip { background: #4ad38e; clip-path: polygon(0 100%, 100% 100%, 100% 32%, 90% 0, 81% 25%, 83% 54%, 80% 88%, 3% 88%, 0 79%);}
+.form { width: 600px; margin: auto;}
+.lx-input { width: 300px; height: 60px; position: relative; margin: 100px auto;}
+input { width: 100%; height: 100%; font-size: 18px; padding: 0 15px; border: none; box-shadow: rgba(21, 39, 71, .2) 0 2px 5px, rgba(21, 39, 71, .2) 0 2px 20px;}
+input + label { position:absolute; top: 0; left: 0; bottom: 0; right: 0; display: block; font-size: 18px; padding: 20px 15px; transform-origin: left; clip-path: polygon(0 0, 100% 0, 100% 100%, 52% 100%, 31% 100%, 0 100%, 0 52%); transition: ease-in-out all 300ms; }
+input + label + .clip { color: #FFF; text-align: right; font-size: 22px; padding: 18px; position:absolute; top: 0; left: 0; bottom: 0; right: 0; background: #80b4ca; clip-path: polygon(0 100%, 100% 100%, 100% 75%, 94% 88%, 80% 88%, 60% 88%, 40% 88%, 3% 88%, 0 79%); pointer-events: none; transition: cubic-bezier(.68,-0.02,.33,1.26) clip-path 600ms;}
+input.loading + label + .clip { color: #FFF; text-align: right; font-size: 22px; padding: 18px; position:absolute; top: 0; left: 0; bottom: 0; right: 0; background: #80b4ca; pointer-events: none; transition: cubic-bezier(.68,-0.02,.33,1.26) clip-path 600ms; animation: linear 800ms fractal_wave infinite}
+input.focus + label,
+input:focus + label { top: -40px; bottom: 10px; transform: scale(.6,.6); background: #80b4ca; color: #FFF; font-size: 22px; padding: 15px 25px; clip-path: polygon(6% 0, 93% 10%, 100% 57%, 15% 52%, 11% 65%, 8% 53%, 0 52%); }
+input.valid + label + .clip { background: #4ad38e; clip-path: polygon(0 100%, 100% 100%, 100% 32%, 90% 0, 81% 25%, 83% 54%, 80% 88%, 3% 88%, 0 79%);}
+
+@keyframes fractal_wave {
+    /* 0%, 100% {clip-path: polygon(0 100%, 100% 100%, 100% 75%, 94% 88%, 80% 88%, 60% 88%, 40% 88%, 3% 88%, 0 79%)} */
+    0%,100% {clip-path: polygon(0 100%, 100% 100%, 100% 75%, 94% 88%, 80% 88%, 60% 88%, 40% 80%, 3% 70%, 0 65%)}
+    20%     {clip-path: polygon(0 100%, 100% 100%, 100% 75%, 94% 88%, 80% 88%, 60% 80%, 40% 70%, 3% 80%, 0 79%)}
+    40%     {clip-path: polygon(0 100%, 100% 100%, 100% 75%, 94% 88%, 80% 80%, 60% 70%, 40% 80%, 3% 88%, 0 79%)}
+    60%     {clip-path: polygon(0 100%, 100% 100%, 100% 75%, 94% 80%, 80% 70%, 60% 80%, 40% 88%, 3% 88%, 0 79%)}
+    80%     {clip-path: polygon(0 100%, 100% 100%, 100% 65%, 94% 70%, 80% 80%, 60% 88%, 40% 88%, 3% 88%, 0 79%)}
+}
 </style>
 
+<link href="https://fonts.googleapis.com/css?family=Manjari:100,400,700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://kit.fontawesome.com/91b58a9028.js"></script>
+<script>
+$('.lx-input input').blur(function(){
+    let actual = $(this);
+    if(actual.val() != ''){
+        console.log();
+        actual.addClass('focus');
+        actual.addClass('loading');
+        setTimeout(function() {
+            actual.removeClass('loading');
+            setTimeout(function() {
+            actual.addClass('valid');
+            }, 600)
+        }, 5000);
+    }else{
+        actual.removeClass('focus');
+    }
+})
+
+
+</script>
